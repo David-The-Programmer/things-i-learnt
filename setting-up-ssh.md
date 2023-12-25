@@ -96,9 +96,15 @@ KeePassXC is an offline password manager that stores passwords as an encrypted f
 
 ## 7. Disabling password authentication on the SSH server
 
+Disabling password authentication or password based logins prevents malicious users from login via bruteforce. Since we have enabled SSH via SSH keys, we do not require password authentication anymore. This also allows us to login to the SSH server/host with greater convenience, without having to type in the password of the SSS host everytime.
+
+Password authentication can be disabled by:
+
 1. Open the SSH config file found at `/etc/ssh/sshd_config` with `sudo vim`.
 2. Uncomment `PasswordAuthentication` and set its value to `no`.
 3. Save and close the file. Restart the SSH daemon by running `sudo systemctl restart sshd`.
+
+**Note the config file is `sshd_config`, not `ssh_config`. Take note of the `d`**.
 
 
 ## Useful links
