@@ -44,7 +44,7 @@ scp ~/Desktop/foo.txt host@192.0.0.1:~Downloads/bar.txt
 ```
 Thus, `foo.txt` would be copied from the client and renamed as `bar.txt` in the host.
 
-### Copying folders
+## Copying folders
 
 If you want to copy all the contents of a folder, including the folder itself, use the `-r` flag. For example:
 
@@ -80,8 +80,6 @@ rsync -avzP <path/to/file/from/source> <user>@<host>:<path/to/destination/folder
 ### Copying folders using `rsync`
 
 Copying folders with `rsync` is similar to `scp`, but with one key difference. When copying the contents of a folder without the folder itself, only a slash `/` is needed to be put at the end of the source folder path, unlike `scp` which requires `/*`.
-
-**NEED TO FIGURE OUT IF THE TOOL OVERWRITES EXISTING FOLDERS**
 
 ## Pros and Cons of each tool
 Pros of `scp`
